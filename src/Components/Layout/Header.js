@@ -1,19 +1,22 @@
 import React from "react";
-import Classes from "./HeaderCartButton.module.css"
-import classes from "./Header.module.css"
 
-const Header=()=>{
+import classes from "./Header.module.css"
+import images from"../../Assests/meals.jpg"
+
+const Header=(props)=>{
 
     return (
-          <header className={classes.header}>
-            <h1>
-                React Meals
-            </h1>
-            <nav>
+        <React.Fragment>
 
-            </nav>
-            <button className={Classes.button}>0</button>
+          <header className={classes.header}>
+            <h1>Meals</h1>
+            <button>Cart</button>
           </header>
+          <div className={classes["main-image"]}>
+            {/* cause we use dash in there we cant use classes. but could be written as above expression for stylingthe dic */}
+          <img src={images} alt="free to order anything"/>
+          </div>
+        </React.Fragment>
     )
 }
 
