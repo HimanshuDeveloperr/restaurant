@@ -1,4 +1,6 @@
 import classes from "./AvailableMeals.module.css"
+import MealItem from "./MealItem";
+
 const DUMMY_MEALS = [
     {
       id: 'm1',
@@ -29,14 +31,23 @@ const DUMMY_MEALS = [
 
 const AvailableMeals=()=>{
 
-    const MealsLists=DUMMY_MEALS.map((meal)=>{
-       return <li>{meal.name}</li>
-    })
+    // const MealsLists=DUMMY_MEALS.map((meal)=>{
+    //    return(
+
+    //      <li className={cLASSES.meal}>
+    //       <h3 className={cLASSES.meal}>{meal.name}</h3>
+    //       <div className={cLASSES.description}>{meal.description}</div>
+    //       <div className={cLASSES.price}>{meal.price}</div>
+
+    //      </li>
+    //    )
+    // })
+    
     
     
     return <section className={classes.meals}>
-        <ul>
-            {MealsLists}
+        <ul>  
+            <MealItem items={DUMMY_MEALS}/>
         </ul>
     </section>
 }
