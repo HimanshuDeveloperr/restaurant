@@ -1,5 +1,5 @@
 import Card from "../UI/Card";
-import Modal from "../UI/Modal";
+
 import classes from "./AvailableMeals.module.css";
 import MealItem from "./MealItem/MealItem";
 
@@ -45,7 +45,7 @@ const AvailableMeals = () => {
 
   return (
     <section className={classes.meals}>
-      <Modal name={DUMMY_MEALS[0].name} price={DUMMY_MEALS[0].price}/>
+      
       <Card>
 
         <ul>{MealsLists}</ul>

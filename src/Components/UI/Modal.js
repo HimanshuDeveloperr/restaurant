@@ -1,44 +1,31 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import Card from "./Card";
-import classes from "./Modal.module.css";
+import { Fragment } from 'react';
+import ReactDOM from 'react-dom';
+
+import classes from './Modal.module.css';
 
 const Backdrop = (props) => {
+  return <div className={classes.backdrop} />;
+};
+
+const ModalOverlay = (props) => {
   return (
-    <div className={classes.backdrop}>
-      
+    <div className={classes.modal}>
+      <div className={classes.content}>{props.children}</div>
     </div>
   );
 };
 
-const Overlay=(props)=>{
-    return <Card className={classes.modal}>
-           <header>
-        <h2>{props.name}</h2>
-      </header>
-      <div>
-        <p>TOTAL AMOUNT 
-        </p>
-            <div>{props.price}</div>
-      </div>
-      <footer>
-        <button>close</button>
-        <button>order</button>
-      </footer>
-        
-    </Card>
-}
+const portalElement = document.getElementById('overlays');
 
 const Modal = (props) => {
   return (
-    <React.Fragment>
+    <Fragment>
+      {ReactDOM.createPortal(<Backdrop />, portalElement)}
       {ReactDOM.createPortal(
-        <Backdrop/>,
-        document.getElementById("portal")
+        <ModalOverlay>{props.children}</ModalOverlay>,
+        portalElement
       )}
-
-      {ReactDOM.createPortal(<Overlay name={props.name} price={props.price}/>,document.getElementById("overlay"))}
-    </React.Fragment>
+    </Fragment>
   );
 };
 
