@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import Input from "../../UI/Input";
 import classes from "./MealItemForm.module.css"
-const MealItemForm=()=>{
+const MealItemForm=(props)=>{
  
          const[amountValid,setamountValid]=useState(true)
   const amountInputRef =useRef()
@@ -15,6 +15,8 @@ const MealItemForm=()=>{
             setamountValid(false)
              return
         }
+
+        props.onAddToCart(enteredAmountNum)
     }
 
 
@@ -34,3 +36,6 @@ const MealItemForm=()=>{
 }
 
 export default MealItemForm
+
+
+// we are not using context as we are only getting the amount here only but we need its price,name etc.
