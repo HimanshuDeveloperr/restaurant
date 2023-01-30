@@ -5,9 +5,12 @@ const defaultCartState={
   items:[]
   ,totalamount:0
 }
-// initial state
+                 // initial state
 
 const CartReducer=(state,action)=>{
+  if(action.type==="ADD"){
+      const updatedItems=state.items.concat(action.item)//it returns a new array with updated items into previous array
+  }
   return defaultCartState
 }
 
@@ -22,6 +25,11 @@ const CartProvider=(props)=>{
     }
 
     const removeItemHandler=(id)=>{
+
+      DispatchCartFN({
+        type:"REMOVE",
+        id:id
+      })
 
     }
 
