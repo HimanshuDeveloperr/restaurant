@@ -7,6 +7,12 @@ const MealItemForm=()=>{
 
     const submitHandler=(event)=>{
         event.preventDefault()
+        const enteredAmount=amountInputRef.current.value//it will always give us a string value to convert it into a number
+        const enteredAmountNum=+enteredAmount
+
+        if(enteredAmount.trim().length===0 || enteredAmountNum<1 || enteredAmountNum>5){
+             return
+        }
     }
 
 
