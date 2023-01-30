@@ -15,7 +15,9 @@ const CartProvider=(props)=>{
 
   const[CartState,DispatchCartFN]=useReducer(CartReducer,defaultCartState)
     const addItemHandler=(item)=>{
-      
+      DispatchCartFN({
+        type:"ADD"
+      })
     }
 
     const removeItemHandler=(id)=>{
