@@ -11,6 +11,10 @@ const CartReducer=(state,action)=>{
   if(action.type==="ADD"){
       const updatedItems=state.items.concat(action.item)//it returns a new array with updated items into previous array
       const updatedTotalAmount=state.totalamount+action.item.price*action.item.amount
+      return{
+        items:updatedItems,
+        totalamount:updatedTotalAmount
+      }
   }
   return defaultCartState
 }
