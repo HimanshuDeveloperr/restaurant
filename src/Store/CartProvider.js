@@ -17,6 +17,7 @@ const CartProvider=(props)=>{
     const addItemHandler=(item)=>{
       DispatchCartFN({
         type:"ADD"
+        ,item:item
       })
     }
 
