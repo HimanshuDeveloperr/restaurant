@@ -19,7 +19,7 @@ function App() {
   return (
   <Fragment>
     {cart && <Cart/>}
-    <Header/>
+    <Header onShow={shown}/>
     <main>
       <Meals/>
     </main>

@@ -11,7 +11,7 @@ const Header=(props)=>{
 
           <header className={classes.header}>
             <h1>Meals</h1>
-            <HeaderCartButton/>
+            <HeaderCartButton onShow={props.onShow}/>
           </header>
           <div className={classes["main-image"]}>
             {/* cause we use dash in there we cant use classes. but could be written as above expression for stylingthe dic */}
